@@ -16,8 +16,19 @@ func axial_to_world(q: int, r: int) -> Vector3:
 	var z = tile_radius * 3/2.0 * r
 	return Vector3(x, 0, z)  # Tiles are flat on Y-axis
 
+func setup_camera():
+	var camera = Camera3D.new()
+	add_child(camera)
+	
+	var map_center = axial_to_world(map_width / 2, map_height / 2)
+	camera.position = map_center + Vector3(0, 10, -10)
+	camera.look_at(map_center, Vector3.UP)
+	camera.current = true
+
 # Generates the hex map
 func _ready() -> void:
+	setup_camera()
+	
 	randomize()  # Ensures different results on each run
 
 	for r in range(map_height):

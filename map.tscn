@@ -4,7 +4,9 @@
 
 [node name="Map" type="Node3D"]
 script = ExtResource("1_hbioy")
+map_width = 30
+map_height = 30
 
-[node name="Camera3D" type="Camera3D" parent="."]
-transform = Transform3D(1, 0, 0, 0, 0.707107, 0.707107, 0, -0.707107, 0.707107, 0, 10, -10)
-current = true
+[node name="DirectionalLight3D" type="DirectionalLight3D" parent="."]
+light_angular_distance = 9.55
+shadow_enabled = true
