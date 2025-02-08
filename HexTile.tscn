@@ -1,0 +1,11 @@
+[gd_scene load_steps=3 format=3 uid="uid://ca5888qmtpaxn"]
+
+[ext_resource type="Script" path="res://HexTile.gd" id="2_xarwb"]
+
+[sub_resource type="CylinderMesh" id="CylinderMesh_xd7is"]
+height = 0.2
+radial_segments = 6
+
+[node name="MeshInstance3D" type="MeshInstance3D"]
+mesh = SubResource("CylinderMesh_xd7is")
+script = ExtResource("2_xarwb")
