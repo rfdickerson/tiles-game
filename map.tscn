@@ -1,12 +1,15 @@
-[gd_scene load_steps=2 format=3 uid="uid://d2vuc6njrewea"]
+[gd_scene load_steps=3 format=3 uid="uid://d2vuc6njrewea"]
 
 [ext_resource type="Script" path="res://HexMap.gd" id="1_hbioy"]
+[ext_resource type="Texture2D" uid="uid://dp72rqmdynl5v" path="res://yield-icons/wheat.png" id="2_yggge"]
 
 [node name="Map" type="Node3D"]
 script = ExtResource("1_hbioy")
 map_width = 30
 map_height = 30
 
-[node name="DirectionalLight3D" type="DirectionalLight3D" parent="."]
-transform = Transform3D(0.947768, 0, -0.318959, 0, 1, 0, 0.318959, 0, 0.947768, 0, 50, 10)
-shadow_enabled = true
+[node name="Sprite3D" type="Sprite3D" parent="."]
+transform = Transform3D(0.2, 0, 0, 0, 0.2, 0, 0, 0, 0.2, 10, 0.2, 0)
+billboard = 1
+no_depth_test = true
+texture = ExtResource("2_yggge")

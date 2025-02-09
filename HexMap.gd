@@ -22,7 +22,7 @@ func setup_camera():
 	camera.set_script(preload("res://DragCamera.gd"))
 
 	var map_center = axial_to_world(map_width / 2, map_height / 2)
-	camera.position = map_center + Vector3(0, 10, -5)
+	camera.position = map_center + Vector3(0, 7, -5)
 	#camera.look_at(map_center, Vector3.UP)
 	camera.rotation_degrees = Vector3(-85, 0, 0)
 	
