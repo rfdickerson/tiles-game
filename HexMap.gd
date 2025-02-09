@@ -18,12 +18,16 @@ func axial_to_world(q: int, r: int) -> Vector3:
 
 func setup_camera():
 	var camera = Camera3D.new()
-	add_child(camera)
-	
-	var map_center = axial_to_world(map_width / 2, map_height / 2)
-	camera.position = map_center + Vector3(0, 10, -10)
-	camera.look_at(map_center, Vector3.UP)
 	camera.current = true
+	camera.set_script(preload("res://DragCamera.gd"))
+
+	var map_center = axial_to_world(map_width / 2, map_height / 2)
+	camera.position = map_center + Vector3(0, 10, -5)
+	#camera.look_at(map_center, Vector3.UP)
+	camera.rotation_degrees = Vector3(-85, 0, 0)
+	
+	add_child(camera)
+
 
 # Generates the hex map
 func _ready() -> void:
@@ -46,6 +50,7 @@ func _ready() -> void:
 				hex_tile.tile_type = "grassland"
 			elif production_yield >= 2:
 				hex_tile.tile_type = "hill"
+				hex_tile.position += Vector3(0, 0.2, 0);
 			else:
 				hex_tile.tile_type = "desert"
 

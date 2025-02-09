@@ -8,5 +8,5 @@ map_width = 30
 map_height = 30
 
 [node name="DirectionalLight3D" type="DirectionalLight3D" parent="."]
-light_angular_distance = 9.55
+transform = Transform3D(0.947768, 0, -0.318959, 0, 1, 0, 0.318959, 0, 0.947768, 0, 50, 10)
 shadow_enabled = true
