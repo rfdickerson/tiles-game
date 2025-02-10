@@ -16,6 +16,16 @@ func axial_to_world(q: int, r: int) -> Vector3:
 	var z = tile_radius * 3/2.0 * r
 	return Vector3(x, 0, z)  # Tiles are flat on Y-axis
 
+func setup_environment():
+	var env = Environment.new()
+	env.ssao_enabled = true
+	env.ssao_intensity = 1.5
+	env.ssao_radius = 1.2
+	
+	var world_env = WorldEnvironment.new()
+	world_env.environment = env
+	add_child(world_env)
+
 func setup_camera():
 	var camera = Camera3D.new()
 	camera.current = true
@@ -32,6 +42,7 @@ func setup_camera():
 # Generates the hex map
 func _ready() -> void:
 	setup_camera()
+	setup_environment()
 	
 	randomize()  # Ensures different results on each run
 
